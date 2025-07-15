@@ -4,7 +4,7 @@ pipeline {
     environment {
         GIT_CREDENTIALS_ID = 'gihub-credentials'
         MODEL_DIR = 'F:/HPE_Project/Model'
-        SCRIPT_REPO = 'https://github.com/Thejashwini005/AIBOM_Project.git'
+        SCRIPT_REPO = 'https://github.com/lavitha-p/AIBOM_project.git'
         REPORT_DIR = "${MODEL_DIR}/reports"
         TOOLS_DIR = "${MODEL_DIR}/tools"
     }
@@ -128,10 +128,10 @@ pipeline {
                     sh '''
                         cp script/cvss.py "${MODEL_DIR}/cvss.py"
 
-                        nohup streamlit run "${MODEL_DIR}/cvss.py" \--input "${REPORT_DIR}/vulnerability.json" \--server.headless true \--server.port 8501 \--server.enableCORS false > streamlit.log 2>&1 &
+                        nohup streamlit run "${MODEL_DIR}/cvss.py" --input "${REPORT_DIR}/vulnerability.json" --server.headless true --server.port 8080 --server.enableCORS false > streamlit.log 2>&1 &
 
                         sleep 5
-                        echo "✅ Streamlit dashboard launched at: http://localhost:8501"
+                        echo "✅ Streamlit dashboard launched at: http://localhost:8080"
                     '''
                 }
             }
