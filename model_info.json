@@ -1,0 +1,45 @@
+{
+    "Model Name": "GPT-2",
+    "Type": "Transformer-based Language Model",
+    "Model Version": "1.5B",
+    "Developer Name": "OpenAI",
+    "License Information": "Open-source (MIT License for small models, restricted for larger ones)",
+  
+    "Model Architecture": {
+      "ML Model": "Transformer-based autoregressive model",
+      "Algorithm": "Self-Attention Mechanism (Transformer)",
+      "Model Parameters": {
+        "Number of Layers": 48,
+        "Number of Attention Heads": 25,
+        "Hidden Layer Size": 1600,
+        "Context Length": 1024
+      }
+    },
+    "Input": "Text prompts",
+    "Input Format": {
+      "Type": "Plain text",
+      "Encoding": "UTF-8",
+      "Example": "Once upon a time..."
+    },
+  
+    "Output": "Generated text completion",
+    "Output Format": {
+      "Type": "Plain text",
+      "Encoding": "UTF-8",
+      "Example": "Once upon a time, there was a kingdom ruled by a wise king..."
+    },
+  
+    "Usage Scenarios": [
+      "Text generation",
+      "Chatbots and virtual assistants",
+      "Code completion",
+      "Content summarization"
+    ],
+  
+    "Limitations": [
+      "Can generate biased or inaccurate content",
+      "No real-world knowledge beyond training data",
+      "Prone to generating misleading or nonsensical text"
+    ]
+  }
+  

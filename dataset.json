@@ -1,0 +1,15 @@
+{
+    "dataset_name": "WebText",
+    "description": "A dataset of high-quality web pages used for training GPT-2, collected from outbound links on Reddit.",
+    "source": "Collected by OpenAI (not publicly released)",
+    "format": ["Text"],
+    "Training Method": "Unsupervised learning with next-word prediction",
+    "data": [
+      {"text": "The future of artificial intelligence is unfolding rapidly with new advancements."},
+      {"text": "Climate change policies are crucial to ensuring a sustainable future."},
+      {"text": "Deep learning models, such as transformers, have revolutionized natural language processing."},
+      {"text": "The history of space exploration is filled with remarkable achievements and discoveries."},
+      {"text": "Advancements in quantum computing may reshape industries in the next decade."}
+    ]
+  }
+  
