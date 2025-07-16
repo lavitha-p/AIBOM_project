@@ -4,7 +4,7 @@ pipeline {
     environment {
         GIT_CREDENTIALS_ID = 'gihub-credentials'
         MODEL_DIR = 'F:/HPE_Project/Model'
-        SCRIPT_REPO = 'https://github.com/lavitha-p/AIBOM_project.git'
+        SCRIPT_REPO = 'https://github.com/Thejashwini005/AIBOM_Project.git'
         REPORT_DIR = "${MODEL_DIR}/reports"
         TOOLS_DIR = "${MODEL_DIR}/tools"
     }
@@ -76,8 +76,9 @@ pipeline {
                         which trivy || echo "Trivy not found!"
                     '''
 
+
                     sh '''
-                        pip install streamlit
+                        C:/Users/HP/AppData/Local/Programs/Python/Python313/Scripts/pip.exe install streamlit
                     '''
 
                     
@@ -124,14 +125,12 @@ pipeline {
             steps {
                 script {
                     echo "📊 Launching CVSS & CWE Dashboard using Streamlit..."
-
+                    sh "cp ${MODEL_DIR}/script/cvss.py ${MODEL_DIR}/"
+                    
                     sh '''
-                        cp script/cvss.py "${MODEL_DIR}/cvss.py"
-
-                        nohup streamlit run "${MODEL_DIR}/cvss.py" --input "${REPORT_DIR}/vulnerability.json" --server.headless true --server.port 8080 --server.enableCORS false > streamlit.log 2>&1 &
-
+                        nohup streamlit run ${MODEL_DIR}/cvss.py -- --input ${REPORT_DIR}/vulnerability.json --server.headless true --server.port 8501 --server.enableCORS false > streamlit.log 2>&1 &
                         sleep 5
-                        echo "✅ Streamlit dashboard launched at: http://localhost:8080"
+                        echo "✅ Streamlit dashboard launched at: http://localhost:8501"
                     '''
                 }
             }
