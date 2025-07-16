@@ -78,8 +78,10 @@ pipeline {
 
 
                     sh '''
-                        C:/Users/HP/AppData/Local/Programs/Python/Python313/Scripts/pip.exe install streamlit
+                        echo "Installing Streamlit..."
+                        "C:/Users/HP/AppData/Local/Programs/Python/Python313/python.exe" -m pip install streamlit
                     '''
+
 
                     
                     echo "🛠️ Running AIBOM script..."
